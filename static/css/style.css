@@ -21,8 +21,12 @@ body {
     color: #4A4A4F;
 }
 
-.red-o {
+.red-i {
     color: #E84610;
+}
+
+.yellow-e {
+    color: yellow;
 }
 
 .thin {
