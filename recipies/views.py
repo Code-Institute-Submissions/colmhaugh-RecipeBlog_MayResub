@@ -11,6 +11,31 @@ class RecipeList(generic.ListView):
     template_name = 'index.html'
     paginate_by = 6
 
+class StarterList(generic.ListView):
+    model = Recipe
+    queryset = Recipe.objects.filter(status = 1, cource = 0).order_by('-created_on') 
+    template_name = 'index.html'
+    paginate_by = 6
+
+class SoupList(generic.ListView):
+    model = Recipe
+    queryset = Recipe.objects.filter(status = 1, cource = 1).order_by('-created_on') 
+    template_name = 'index.html'
+    paginate_by = 6
+
+class MainList(generic.ListView):
+    model = Recipe
+    queryset = Recipe.objects.filter(status = 1, cource = 1).order_by('-created_on') 
+    template_name = 'index.html'
+    paginate_by = 6
+
+class DessertList(generic.ListView):
+    model = Recipe
+    queryset = Recipe.objects.filter(status = 1, cource = 1).order_by('-created_on') 
+    template_name = 'index.html'
+    paginate_by = 6
+
+
 class RecipeDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
@@ -75,3 +100,4 @@ class RecipeLike(View):
             recipe.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+

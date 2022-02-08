@@ -38,16 +38,16 @@
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Soup</a>
+                        <a class="nav-link" href="{% url 'starter' %}">Starter</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Starter</a>
+                        <a class="nav-link" href="{% url 'soup' %}">Soup</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Main</a>
+                        <a class="nav-link" href="{% url 'main' %}">Main</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Dessert</a>
+                        <a class="nav-link" href="{% url 'dessert' %}">Dessert</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
@@ -86,10 +86,10 @@
             <div class="col l4 offset-l2 s12">
               <h5 class="white-text">Pick your course:</h5>
               <ul>
-                <li><a class="grey-text text-lighten-3" href="#!">Starter</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Soup</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Main</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Dessert</a></li>
+                <li><a class="grey-text text-lighten-3" href="{% url 'starter' %}">Starter</a></li>
+                <li><a class="grey-text text-lighten-3" href="{% url 'soup' %}">Soup</a></li>
+                <li><a class="grey-text text-lighten-3" href="{% url 'main' %}">Main</a></li>
+                <li><a class="grey-text text-lighten-3" href="{% url 'dessert' %}">Dessert</a></li>
               </ul>
             </div>
           </div>
