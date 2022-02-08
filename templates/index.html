@@ -24,10 +24,10 @@
                                 </div>
                             </div>
                             <a href="{% url 'recipe_detail' recipe.slug  %}" class="recipe-link">
-                                <h2 class="card-title">{{ recipe.title }}</h2>
-                                <p class="card-text">{{ recipe.description }}</p>
-                                <p class="card-text">{{ recipe.ingredients }}</p>
-                                <p class="card-text">{{ recipe.instructions }}</p>
+                                <h2 class="card-title">{{ recipe.title | safe  }}</h2>
+                                <p class="card-text">{{ recipe.description | safe }}</p>
+                                <p class="card-text">{{ recipe.ingredients | safe }}</p>
+                                <p class="card-text">{{ recipe.instructions | safe }}</p>
                             </a>
                             <hr />
                             <p class="card-text text-muted h6">{{ recipe.created_on}} <i class="far fa-thumbs-up"></i>
