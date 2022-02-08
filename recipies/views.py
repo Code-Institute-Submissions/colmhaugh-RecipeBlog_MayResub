@@ -25,13 +25,13 @@ class SoupList(generic.ListView):
 
 class MainList(generic.ListView):
     model = Recipe
-    queryset = Recipe.objects.filter(status = 1, cource = 1).order_by('-created_on') 
+    queryset = Recipe.objects.filter(status = 1, cource = 2).order_by('-created_on') 
     template_name = 'index.html'
     paginate_by = 6
 
 class DessertList(generic.ListView):
     model = Recipe
-    queryset = Recipe.objects.filter(status = 1, cource = 1).order_by('-created_on') 
+    queryset = Recipe.objects.filter(status = 1, cource = 3).order_by('-created_on') 
     template_name = 'index.html'
     paginate_by = 6
 
