@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Recipe
-from .forms import CommentForm, RecipeForm
+from .forms import CommentForm
 
 
 class RecipeList(generic.ListView):
@@ -34,12 +34,6 @@ class DessertList(generic.ListView):
     queryset = Recipe.objects.filter(status = 1, cource = 3).order_by('-created_on') 
     template_name = 'index.html'
     paginate_by = 6
-
-# class MyRecipeList(generic.ListView):
-#     model = Recipe
-#     queryset = Recipe.objects.filter(author=request.user.id).order_by('-created_on') 
-#     template_name = 'index.html'
-#     paginate_by = 6
 
 
 class RecipeDetail(View):
@@ -106,27 +100,3 @@ class RecipeLike(View):
             recipe.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
-
-# class AddRecipe(View):
-#     return 
-
-# class AddRecipe(View):
-
-#         def post(self, request, *args, **kwargs):    
-#         recipe_form = RecipeForm(data=request.POST)
-
-#         if recipe_form.is_valid():
-#             recipe_form.instance.email = request.user.email
-#             recipe_form.instance.name = request.user.username
-            
-#             recipe.save()
-#         else:
-#             recipe_form = RecipeForm()
-        
-#         return render(
-#             request,
-#             "recipeform.html",
-#             {
-#                 "recipe_form": RecipeForm()
-#             },
-#         )
