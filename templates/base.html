@@ -49,13 +49,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'dessert' %}">Dessert</a>
                     </li>
-                    {% if user.is_authenticated %}
+                    {% if user.is_authenticated %}                    
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'my_recipe' %}">My Recipes</a>
-                    </li>
+                    </li>                                                       
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_signup' %}">SignUp</a>
@@ -87,7 +84,7 @@
               <p class="grey-text text-lighten-4">An easy way to find and share recipies</p>
             </div>
             <div class="col l4 offset-l2 s12">
-              <h5 class="white-text">Pick your course:</h5>
+              <h5 class="black-text">Pick your course:</h5>
               <ul>
                 <li><a class="grey-text text-lighten-3" href="{% url 'starter' %}">Starter</a></li>
                 <li><a class="grey-text text-lighten-3" href="{% url 'soup' %}">Soup</a></li>
@@ -99,8 +96,7 @@
         </div>
         <div class="footer-copyright">
           <div class="container">
-          © 2014 Copyright Text
-          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+          © 2022 Copyright Text          
           </div>
         </div>
       </footer>

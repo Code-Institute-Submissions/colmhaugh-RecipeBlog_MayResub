@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Recipe
-from .forms import CommentForm
+from .forms import CommentForm, RecipeForm
 
 
 class RecipeList(generic.ListView):
@@ -35,11 +35,11 @@ class DessertList(generic.ListView):
     template_name = 'index.html'
     paginate_by = 6
 
-class MyRecipeList(generic.ListView):
-    model = Recipe
-    queryset = Recipe.objects.filter(status = 1).order_by('-created_on') 
-    template_name = 'index.html'
-    paginate_by = 6
+# class MyRecipeList(generic.ListView):
+#     model = Recipe
+#     queryset = Recipe.objects.filter(author=request.user.id).order_by('-created_on') 
+#     template_name = 'index.html'
+#     paginate_by = 6
 
 
 class RecipeDetail(View):
@@ -88,7 +88,7 @@ class RecipeDetail(View):
             "recipe_detail.html",
             {
                 "recipe": recipe,
-                "comment": comments,
+                "comments": comments,
                 "commented": True,
                 "liked": liked,
                 "comment_form": CommentForm()
@@ -107,3 +107,26 @@ class RecipeLike(View):
 
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
+# class AddRecipe(View):
+#     return 
+
+# class AddRecipe(View):
+
+#         def post(self, request, *args, **kwargs):    
+#         recipe_form = RecipeForm(data=request.POST)
+
+#         if recipe_form.is_valid():
+#             recipe_form.instance.email = request.user.email
+#             recipe_form.instance.name = request.user.username
+            
+#             recipe.save()
+#         else:
+#             recipe_form = RecipeForm()
+        
+#         return render(
+#             request,
+#             "recipeform.html",
+#             {
+#                 "recipe_form": RecipeForm()
+#             },
+#         )

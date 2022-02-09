@@ -1,18 +1,6 @@
-/* body {
-    background-color: #F9FAFC;
-} */
-
-
 body {
     background-color: #F9FAFC;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-
-  main {
-    flex: 1 0 auto;
-  }
+}
 
 .brand {
     font-family: Lato, sans-serif;
@@ -102,22 +90,22 @@ body {
     z-index: 100;
 }
 
-.recipe-link {
+.post-link {
     text-decoration: none;
     color: #445261;
 }
 
-.recipe-link:hover,
+.post-link:hover,
 .page-link {
     color: #E84610;
 }
 
-.recipe-title {
+.post-title {
     margin-top: 20%;
     margin-left: 5%;
 }
 
-.recipe-subtitle {
+.post-subtitle {
     margin-left: 5%;
     color: lightgray;
 }

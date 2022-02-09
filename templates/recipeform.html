@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<!-- 
+user.username
+{% if author in user.username %} -->
+{% if user.is_authenticated %}
+<div class="container-fluid">
+    <h3>Add a recipe:</h3>
+                <p>Posting as: {{ user.username }}</p>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ recipe_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                </form>
+    
+</div>
+{%endblock%}

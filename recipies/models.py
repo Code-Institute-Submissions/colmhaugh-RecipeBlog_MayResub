@@ -16,7 +16,6 @@ class Recipe(models.Model):
     ingredients = models.TextField()
     instructions = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
-    #cource = models.TextField(choices=COURCE_CHOICE, blank=False)
     cource = models.IntegerField(choices=COURCE_CHOICE)
     likes = models.ManyToManyField(User, related_name='recipepost_like', blank=True)
     approved = models.BooleanField(default=False)
