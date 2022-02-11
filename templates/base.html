@@ -82,30 +82,122 @@
     </main>
 
     <!-- Footer -->
-    <footer class="page-footer">
-        <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-              <h5 class="white-text">My Recipe Blog</h5>
-              <p class="grey-text text-lighten-4">An easy way to find and share recipies</p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-              <h5 class="black-text">Pick your course:</h5>
-              <ul>
-                <li><a class="grey-text text-lighten-3" href="{% url 'starter' %}">Starter</a></li>
-                <li><a class="grey-text text-lighten-3" href="{% url 'soup' %}">Soup</a></li>
-                <li><a class="grey-text text-lighten-3" href="{% url 'main' %}">Main</a></li>
-                <li><a class="grey-text text-lighten-3" href="{% url 'dessert' %}">Dessert</a></li>
-              </ul>
-            </div>
-          </div>
+<footer class="page-footer font-small blue pt-4">
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+  
+          <!-- Content -->
+          <h5 class="text-uppercase">Footer Content</h5>
+          <p>Here you can use rows and columns to organize your footer content.</p>
+  
         </div>
-        <div class="footer-copyright">
-          <div class="container">
-          © 2022 Copyright Text          
-          </div>
+        <!-- Grid column -->
+  
+        <hr class="clearfix w-100 d-md-none pb-3">
+  
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+  
+          <!-- Links -->
+          <h5 class="text-uppercase">Links</h5>
+  
+          <ul class="list-unstyled">
+            {% if user.is_authenticated %}   
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'dessert' %}">My Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'dessert' %}">Add a Recipe</a>
+                    </li>                 
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                    </li>                                                       
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_signup' %}">SignUp</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                    </li>
+                    {% endif %}
+            </li>
+          </ul>
+  
         </div>
-      </footer>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+  
+          <!-- Links -->
+          <h5 class="text-uppercase">Course</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+                <a class="nav-link" href="{% url 'starter' %}">Starter</a>
+            </li>
+            <li>
+                <a class="nav-link" href="{% url 'soup' %}">Soup</a>
+            </li>
+            <li>
+                <a class="nav-link" href="{% url 'main' %}">Main</a>
+            </li>
+            <li>
+                <a class="nav-link" href="{% url 'dessert' %}">Dessert</a>
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row -->
+  
+    </div>
+    <!-- Footer Links -->
+  
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright      
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
 </body>
 
 </html>
+
+
+
+<!-- Footer
+<footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">My Recipe Blog</h5>
+          <p class="grey-text text-lighten-4">An easy way to find and share recipies</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="black-text">Pick your course:</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="{% url 'starter' %}">Starter</a></li>
+            <li><a class="grey-text text-lighten-3" href="{% url 'soup' %}">Soup</a></li>
+            <li><a class="grey-text text-lighten-3" href="{% url 'main' %}">Main</a></li>
+            <li><a class="grey-text text-lighten-3" href="{% url 'dessert' %}">Dessert</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2022 Copyright Text          
+      </div>
+    </div>
+  </footer> -->
