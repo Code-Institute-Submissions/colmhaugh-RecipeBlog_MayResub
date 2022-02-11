@@ -49,7 +49,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'dessert' %}">Dessert</a>
                     </li>
-                    {% if user.is_authenticated %}                    
+                    {% if user.is_authenticated %}   
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'dessert' %}">My Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'dessert' %}">Add a Recipe</a>
+                    </li>                 
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>                                                       

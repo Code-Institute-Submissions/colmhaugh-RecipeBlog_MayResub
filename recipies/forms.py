@@ -7,3 +7,10 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ('body',)
 
+# class RecipeForm(forms.ModelForm):
+#     class Meta:
+#         model = Recipe
+#         fields = ['title', 'featured_image', 'description', 'ingredients', 'instructions', 'cource']
+#         # fields = '__all__'
+#         # exclude = ['title']
+        

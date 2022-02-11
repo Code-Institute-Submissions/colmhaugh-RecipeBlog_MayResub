@@ -35,6 +35,13 @@ class DessertList(generic.ListView):
     template_name = 'index.html'
     paginate_by = 6
 
+class MyRecipetList(generic.ListView):
+    model = Recipe
+    queryset = Recipe.objects.filter(status = 1, cource = 3).order_by('-created_on') 
+    # queryset = Recipe.objects.filter(status = 1, author = user.username).order_by('-created_on') 
+    template_name = 'index.html'
+    paginate_by = 6
+
 
 class RecipeDetail(View):
 
