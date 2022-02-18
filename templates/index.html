@@ -6,8 +6,6 @@
 
 <div class="container-fluid">
     <div class="row">
-
-        <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for recipe in recipe_list %}
@@ -21,15 +19,13 @@
                                 {% else %}
                                 <img class="card-img-top" src=" {{ recipe.featured_image.url }}">
                                 {% endif %}
-                                <div class="image-flash">
+                                <!-- <div class="image-flash">
                                     <p class="author">Author: {{ recipe.author }}</p>
-                                </div>
+                                </div> -->
                             </div>
                             <a href="{% url 'recipe_detail' recipe.slug  %}" class="recipe-link">
                                 <h2 class="card-title">{{ recipe.title | safe  }}</h2>
                                 <p class="card-text">{{ recipe.description | safe }}</p>
-                                <p class="card-text">{{ recipe.ingredients | safe }}</p>
-                                <p class="card-text">{{ recipe.instructions | safe }}</p>
                             </a>
                             <hr />
                             <p class="card-text text-muted h6">{{ recipe.created_on}} <i class="far fa-thumbs-up"></i>
@@ -59,20 +55,6 @@
         </ul>
     </nav>
     {% endif %}
-
-    <!-- {% if user.is_authenticated %}
-    <div class="container-fluid">
-        <h3>Add a recipe:</h3>
-                    <p>Posting as: {{ user.username }}</p>
-                    <form method="post" style="margin-top: 1.3em;">
-                        <div>
-                        {{ recipe_form | crispy }}
-                        {% csrf_token %}</div>
-                        <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-                    </form>
-        
-    </div>
-    {% endif%} -->
 
 </div>
 {%endblock%}

@@ -1,3 +1,8 @@
+"""
+View page with list views to filter different
+cources for different options and a detail
+page
+"""
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
@@ -7,44 +12,44 @@ from .forms import CommentForm
 
 class RecipeList(generic.ListView):
     model = Recipe
-    queryset = Recipe.objects.filter(status = 1).order_by('-created_on')
+    queryset = Recipe.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 6
+
 
 class StarterList(generic.ListView):
     model = Recipe
-    queryset = Recipe.objects.filter(status = 1, cource = 0).order_by('-created_on') 
+    queryset = Recipe.objects.filter(
+        status=1, cource=0).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 6
+
 
 class SoupList(generic.ListView):
     model = Recipe
-    queryset = Recipe.objects.filter(status = 1, cource = 1).order_by('-created_on') 
+    queryset = Recipe.objects.filter(
+        status=1, cource=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 6
+
 
 class MainList(generic.ListView):
     model = Recipe
-    queryset = Recipe.objects.filter(status = 1, cource = 2).order_by('-created_on') 
+    queryset = Recipe.objects.filter(
+        status=1, cource=2).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 6
+
 
 class DessertList(generic.ListView):
     model = Recipe
-    queryset = Recipe.objects.filter(status = 1, cource = 3).order_by('-created_on') 
-    template_name = 'index.html'
-    paginate_by = 6
-
-class MyRecipetList(generic.ListView):
-    model = Recipe
-    queryset = Recipe.objects.filter(status = 1, cource = 3).order_by('-created_on') 
-    # queryset = Recipe.objects.filter(status = 1, author = user.username).order_by('-created_on') 
+    queryset = Recipe.objects.filter(
+        status=1, cource=3).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 6
 
 
 class RecipeDetail(View):
-
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
@@ -52,7 +57,7 @@ class RecipeDetail(View):
         liked = False
         if recipe.likes.filter(id=self.request.user.id).exists():
             liked = True
-        
+
         return render(
             request,
             "recipe_detail.html",
@@ -64,7 +69,7 @@ class RecipeDetail(View):
                 "comment_form": CommentForm()
             },
         )
-    
+
     def post(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
@@ -72,7 +77,7 @@ class RecipeDetail(View):
         liked = False
         if recipe.likes.filter(id=self.request.user.id).exists():
             liked = True
-        
+
         comment_form = CommentForm(data=request.POST)
 
         if comment_form.is_valid():
@@ -83,7 +88,7 @@ class RecipeDetail(View):
             comment.save()
         else:
             comment_form = CommentForm()
-        
+
         return render(
             request,
             "recipe_detail.html",
@@ -95,6 +100,7 @@ class RecipeDetail(View):
                 "comment_form": CommentForm()
             },
         )
+
 
 class RecipeLike(View):
 
