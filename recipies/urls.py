@@ -1,5 +1,7 @@
 """
-
+URLs for the project my recipes
+app.  Mostly of detail and list
+views
 """
 
 from . import views

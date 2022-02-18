@@ -5,11 +5,11 @@
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
-            <div class="col-md-6 masthead-text">
+            <div class="col-md-3 masthead-text">
                 <h1 class="recipe-title">{{ recipe.title }}</h1>
                 <p class="recipe-subtitle">{{ recipe.author }} | {{ recipe.created_on }}</p>
             </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
+            <div class="d-none d-md-block col-md-9 masthead-image">
                 {% if "placeholder" in recipe.featured_image.url %}
                 <img src="https://www.pinclipart.com/picdir/big/199-1990075_dining-dinner-plate-restaurant-icon-restaurant-png-clipart.png" width="100%">
                 {% else %}
