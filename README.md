@@ -200,8 +200,8 @@ Click on the links below to view.
 <h1>4. Testing</h1>
 
 ## 1. Code validators
- - **[HTML Validator](https://validator.w3.org/):** No errors to show.
-    - With testing the HTML code, I had some syntax issues on all pages I build with jinja templating.
+ - **[HTML Validator](https://validator.w3.org/):** Some errors due to django.
+    - With testing the HTML code, I had some syntax issues on all pages I build with django templating.
     - I tested the HTML code by running my server locally and used view page source. This code I passed through the validator.
     - Some doctype errors that can be ingored as seen on slack chat.
 
