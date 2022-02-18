@@ -203,13 +203,9 @@ Click on the links below to view.
  - **[HTML Validator](https://validator.w3.org/):** No errors to show.
     - With testing the HTML code, I had some syntax issues on all pages I build with jinja templating.
     - I tested the HTML code by running my server locally and used view page source. This code I passed through the validator.
-    - There is one warning on every page saying: Section lacks heading. Consider using h2-h6 elements to add identifying heading to all sections. I have got this warning because I have put my flash messages between sections.
+    - Some doctype errors that can be ingored as seen on slack chat.
 
 - **[CSS Validator](https://jigsaw.w3.org/css-validator/):** No errors found.
-
-- **[JS Hint](https://jshint.com/):** No errors found, two warnings, one undefined variable 
-    - 2 warnings consist the notification: 'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
-    - 1 undefined variable: $
 
 - **[Python validator | PEP8](http://pep8online.com/):** No errors found
 
@@ -218,7 +214,7 @@ Click on the links below to view.
 <span id="responsiveness"></span>
 
 ## 2. Responsiveness 
-- Responsiveness of the project is tested with [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).
+- Responsiveness of the project is tested with [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools).
 - The project is tested on the following devices: 
     - Desktop, Mobile & Tablet.  
     - On ChromeDevTools used some of their devices for further testing.

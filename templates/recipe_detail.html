@@ -11,9 +11,9 @@
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if "placeholder" in recipe.featured_image.url %}
-                <img src="https://www.pinclipart.com/picdir/big/199-1990075_dining-dinner-plate-restaurant-icon-restaurant-png-clipart.png" width="100%">
+                <img src="https://www.pinclipart.com/picdir/big/199-1990075_dining-dinner-plate-restaurant-icon-restaurant-png-clipart.png" width="100%" alt="image of the food">
                 {% else %}
-                <img src=" {{ recipe.featured_image.url }}" width="100%">
+                <img src=" {{ recipe.featured_image.url }}" width="100%" alt="image of the food">
                 {% endif %}
             </div>
         </div>

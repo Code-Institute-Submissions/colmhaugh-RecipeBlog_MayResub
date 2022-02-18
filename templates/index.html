@@ -15,9 +15,9 @@
                             <div class="image-container">
                                 {% if "placeholder" in recipe.featured_image.url %}
                                 <img class="card-img-top"
-                                    src="https://www.pinclipart.com/picdir/big/199-1990075_dining-dinner-plate-restaurant-icon-restaurant-png-clipart.png">
+                                    src="https://www.pinclipart.com/picdir/big/199-1990075_dining-dinner-plate-restaurant-icon-restaurant-png-clipart.png" alt="Placeholder image for food">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ recipe.featured_image.url }}">
+                                <img class="card-img-top" src=" {{ recipe.featured_image.url }} " alt="image of the food">
                                 {% endif %}
                                 <!-- <div class="image-flash">
                                     <p class="author">Author: {{ recipe.author }}</p>
