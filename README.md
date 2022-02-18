@@ -275,7 +275,7 @@ To make a local clone, follow the following steps.
         - Search your repository to connect with it.
         - When your repository appears click on **connect** to connect your repository with the Heroku. 
     - Go to the settings app in Heroku and go to **Config Vars**. Click on **Reveal Config Vars**.
-        - Enter the variables contained in your env.py file. it is about: **CLOUDINARY_URL, DATABASE_URL, DISABLE_COLLECTSTATIC, SECRET_KEY**
+        - Enter the variables contained in your env.py file. it is about: **CLOUDINARY_URL, DATABASE_URL, SECRET_KEY**
 4. Push the requirements.txt and Procfile to repository. 
      ```
     $ git add requirements.txt
