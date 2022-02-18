@@ -109,7 +109,7 @@ Mockup designs are made with [Balsamic.](https://balsamiq.com/)
 Click on the links below to view.
 |    Mobile   |    Tablet / Desktop   | 
 |    :----:    |     :----:   |   
-|[RecipeBLOG](/readme/balsamic/Recipe for Android.bmpr)|[RecipeBLOG](/readme/balsamic/Recipe for LargerScreens.bmpr) | 
+|[RecipeBLOG](https://github.com/colmhaugh/RecipeBlog/blob/main/readme/balsamic/Recipe%20for%20Android.bmpr)|[RecipeBLOG](https://github.com/colmhaugh/RecipeBlog/blob/main/readme/balsamic/Recipe%20for%20LargerScreens.bmpr) | 
 
 <span id="features"></span>
 
