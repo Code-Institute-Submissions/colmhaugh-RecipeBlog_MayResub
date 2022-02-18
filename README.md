@@ -1,8 +1,8 @@
 <h1 align="center">RecipeBLOG</h1>
 
-<span id="recipeBlog"></span>
+![Portfolio website](readme/readme_img/recipeBLOG.png)
 
-![Portfolio website](readme_img/RecipeBLOG.png)
+<span id="recipeBlog"></span>
 
 The RecipeBLOG is a recipe website that allows users to like and comment on recipes that are posted by the adminstrator of the site.
 
