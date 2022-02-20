@@ -4,16 +4,17 @@
 
 <div class="masthead">
     <div class="container">
-        <div class="row g-0">            
-            <div class="masthead-image">                
-                {% if "placeholder" in recipe.featured_image.url %}
-                <img class="image-container" src="https://www.pinclipart.com/picdir/big/199-1990075_dining-dinner-plate-restaurant-icon-restaurant-png-clipart.png" width="100%" alt="image of the food">
-                {% else %}
-                <img class="image-container" src=" {{ recipe.featured_image.url }}" width="100%" alt="image of the food">
-                {% endif %}                                 
-            </div>
+        <div class="row g-0">
             <div class="masthead-text">
-                    <h1 class="recipe-title">{{ recipe.title }}</h1>          
+                <h1 class="recipe-title">{{ recipe.title }}</h1>
+                <p class="recipe-subtitle">{{ recipe.author }} | {{ recipe.created_on }}</p>
+            </div>
+            <div class="masthead-image">
+                {% if "placeholder" in recipe.featured_image.url %}
+                <img src="https://www.pinclipart.com/picdir/big/199-1990075_dining-dinner-plate-restaurant-icon-restaurant-png-clipart.png" width="100%" alt="image of the food">
+                {% else %}
+                <img src=" {{ recipe.featured_image.url }}" width="100%" alt="image of the food">
+                {% endif %}
             </div>
         </div>
     </div>
