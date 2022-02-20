@@ -70,7 +70,7 @@ body {
 
 .recipe-title {
     position: absolute;
-    margin-top: 20%;
+    margin-top: 10%;
     margin-left: 5%;
 }
 
@@ -87,7 +87,7 @@ body {
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: #445261;
 }
 
 .link {
