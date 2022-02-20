@@ -1,6 +1,6 @@
 body {
     font-family: Lato, sans-serif;
-    background-color: #F9FAFC;    
+    background-color: #dfe6f5;    
 }
 
 .brand {
@@ -11,23 +11,15 @@ body {
 }
 
 .red-i {
-    color: #E84610;
+    color: #e84210;
 }
 
 .yellow-e {
-    color: yellow;
+    color: rgb(251, 255, 0);
 }
 
 .thin {
     font-weight: 300;
-}
-
-.light-bg {
-    background-color: #fff;
-}
-
-.dark-bg {
-    background-color: #445261;
 }
 
 .main-bg {
@@ -43,26 +35,12 @@ body {
     position: relative;
 }
 
-.image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #23BBBB;
-}
-
-.author {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
-}
-
 .masthead {
     margin-top: 10px;
     overflow: hidden;
     position: relative;
     display: inline-block;
-    height: 33vh;
+    height: 35vh;
     width: 100%;
 }
 
@@ -91,22 +69,23 @@ body {
     z-index: 100;
 }
 
-.post-link {
+.recipe-link {
     text-decoration: none;
     color: #445261;
 }
 
-.post-link:hover,
+.recipe-link:hover,
 .page-link {
-    color: #E84610;
+    color: aqua;
 }
 
-.post-title {
+.recipe-title {
+    position: absolute;
     margin-top: 20%;
     margin-left: 5%;
 }
 
-.post-subtitle {
+.recipe-subtitle {
     margin-left: 5%;
     color: lightgray;
 }
@@ -134,14 +113,14 @@ body {
 }
 
 .btn-like {
-    color: #E84610;
+    color: aqua;
     border: none;
     background: transparent;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: #E84610;
+    color: aqua;
     background: transparent;
     border: none;
 }

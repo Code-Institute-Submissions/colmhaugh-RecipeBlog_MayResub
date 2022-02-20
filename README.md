@@ -290,7 +290,7 @@ Click on **Open app** in the right corner of your Heroku account. The app wil op
 
 <h1>6. Credits</h1>
 
-This project is based on the walkthrough project and also using project example Idea 2.
+This project is based on the walkthrough project and also using project example Idea 2.  A ot of the code that I used in the walkthrough project I also used on this project.
 
 #### Recipes
 - I got the recipes and images from [BBC Good Food](https://www.bbcgoodfood.com/). 
