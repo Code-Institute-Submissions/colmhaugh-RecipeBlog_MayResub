@@ -55,7 +55,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 75%; 
+    width: 50%; 
 }
 
 .masthead-image:after {
@@ -79,7 +79,7 @@ body {
 
 .recipe-link:hover,
 .page-link {
-    color: rgb(73, 68, 71);
+    color: black;
 }
 
 .recipe-title {
