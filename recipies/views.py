@@ -1,13 +1,9 @@
-"""
-View page with list views to filter different
-cources for different options and a detail
-page
-"""
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Recipe
+from .models import Recipe, Comment
 from .forms import CommentForm
+from django.contrib import messages
 
 
 class RecipeList(generic.ListView):
@@ -63,7 +59,7 @@ class RecipeDetail(View):
             "recipe_detail.html",
             {
                 "recipe": recipe,
-                "comment": comments,
+                "comments": comments,
                 "commented": False,
                 "liked": liked,
                 "comment_form": CommentForm()
@@ -81,7 +77,6 @@ class RecipeDetail(View):
         comment_form = CommentForm(data=request.POST)
 
         if comment_form.is_valid():
-            comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
             comment.recipe = recipe
@@ -113,3 +108,56 @@ class RecipeLike(View):
             recipe.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+
+
+class EditComment(View):
+    def get(self, request, id, *args, **kwargs):
+        comment = get_object_or_404(Comment, id=id) 
+        recipe = get_object_or_404(Recipe, id=comment.recipe.id)        
+        comment_form = CommentForm(instance=comment)
+        return render(
+            request,
+            "comment_edit.html",
+            {
+                "recipe": recipe,
+                "comment": comment,  
+                "comment_form": comment_form,             
+            },
+        )
+
+    def post(self, request, id, *args, **kwargs):
+        comment = get_object_or_404(Comment, id=id) 
+        recipe = get_object_or_404(Recipe, id=comment.recipe.id)        
+        comment_form = CommentForm(request.POST or None, instance=comment)
+        if comment_form.is_valid():
+            comment_form.instance.name = request.user.username
+            comment = comment_form.save(commit=False)
+            comment.recipe = recipe
+            comment.approved = False
+            comment.save()
+            messages.success(request, "Comment update pending approval")
+            
+            return HttpResponseRedirect(reverse('recipe_detail', args=[recipe.slug]))
+
+        else:
+            messages.error(request, "Error please try again")
+                    
+        return render(
+            request,
+            "comment_edit.html",
+            {
+                "recipe": recipe,
+                "comment": comment,  
+                "comment_form": comment_form,             
+            },
+        )
+
+
+class DeleteComment(View):
+    def get(self, request, id, *args, **kwargs):
+        comment = get_object_or_404(Comment, id=id) 
+        recipe = get_object_or_404(Recipe, id=comment.recipe.id) 
+        comment.delete()
+        messages.success(request, "Comment deleted")
+        
+        return HttpResponseRedirect(reverse('recipe_detail', args=[recipe.slug]))

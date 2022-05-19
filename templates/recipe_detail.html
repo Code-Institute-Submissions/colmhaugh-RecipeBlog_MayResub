@@ -89,6 +89,31 @@
                     </p>
                     {{ comment.body | linebreaks }}
                 </div>
+                {% if comment.name|lower == request.user|lower %}
+                <a href="{% url 'comment_edit' comment.id %}" class="btn">Edit</a>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-{{comment.id}}">
+                    Delete
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="modal-{{comment.id}}" tabindex="-1" aria-labelledby="modal-{{comment.id}}-Label" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="modal-{{comment.id}}-Label">Delete Comment?</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            This action cannot be undone. Are you sure you want to delete your comment?
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                        <a href="{% url 'comment_delete' comment.id %}" class="btn btn-success">Yes</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                {% endif%}
+
                 {% endfor %}
             </div>
         </div>
