@@ -90,8 +90,8 @@
                     {{ comment.body | linebreaks }}
                 </div>
                 {% if comment.name|lower == request.user|lower %}
-                <a href="{% url 'comment_edit' comment.id %}" class="btn">Edit</a>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-{{comment.id}}">
+                <a href="{% url 'comment_edit' comment.id %}" class="btn btn-signup">Edit</a>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-{{comment.id}}">
                     Delete
                 </button>
                 <!-- Modal -->
